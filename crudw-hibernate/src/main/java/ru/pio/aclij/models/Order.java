@@ -1,7 +1,6 @@
 package ru.pio.aclij.models;
 
 import jakarta.persistence.*;
-
 import java.sql.Timestamp;
 
 @Entity
@@ -19,11 +18,24 @@ public class Order implements Model {
     @Column(name = "end_location")
     private String endLocation;
     @Column(name = "status")
-    private String Status;
+    private String status;
     @OneToOne
     @JoinColumn(name = "client_id", referencedColumnName = "id")
-    private Client client;
+    private User user;
     @OneToOne
     @JoinColumn(name = "driver_id", referencedColumnName = "id")
-    private Client driver;
+    private Driver driver;
+
+    public Order(Timestamp orderDate, String startLocation, String endLocation, String status, User user, Driver driver) {
+        this.orderDate = orderDate;
+        this.startLocation = startLocation;
+        this.endLocation = endLocation;
+        this.status = status;
+        this.user = user;
+        this.driver = driver;
+    }
+
+    public Order() {
+
+    }
 }

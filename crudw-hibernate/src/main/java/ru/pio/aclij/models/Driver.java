@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Cascade;
 
+@Getter
 @Entity
 @Table(name = "drivers")
 public class Driver implements Model {
@@ -22,12 +23,15 @@ public class Driver implements Model {
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "vehicle_id", referencedColumnName = "id")
     @Setter @Getter private Vehicle vehicle;
+    @Column(name = "city")
+    private String city;
 
-    public Driver(String name, String licenseNumber, int experienceYears, Vehicle vehicle) {
+    public Driver(String name, String licenseNumber, int experienceYears, Vehicle vehicle, String city) {
         this.name = name;
         this.licenseNumber = licenseNumber;
         this.experienceYears = experienceYears;
         this.vehicle = vehicle;
+        this.city = city;
     }
 
     public Driver() {

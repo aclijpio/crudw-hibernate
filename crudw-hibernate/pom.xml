@@ -44,6 +44,14 @@
       <version>1.18.28</version>
       <scope>provided</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/com.googlecode.libphonenumber/geocoder -->
+    <!-- https://mvnrepository.com/artifact/com.google.code.geocoder-java/geocoder-java -->
+    <dependency>
+      <groupId>com.google.code.geocoder-java</groupId>
+      <artifactId>geocoder-java</artifactId>
+      <version>0.16</version>
+    </dependency>
+
 
   </dependencies>
 </project>

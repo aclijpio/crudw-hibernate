@@ -18,7 +18,9 @@ public class App
                 "Host",
                 "hd231as",
                 5,
-                vehicle
+                vehicle,
+                "Kazan",
+                false
         );
         Vehicle newVehicle = new Vehicle(
                 "Noam",

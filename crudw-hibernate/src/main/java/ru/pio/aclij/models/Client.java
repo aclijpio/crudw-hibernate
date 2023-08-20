@@ -1,20 +1,19 @@
 package ru.pio.aclij.models;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "clients")
+import lombok.Data;
+import lombok.Getter;
+import ru.pio.aclij.GeoPoint;
+@Getter
 public class Client implements Model{
-    @Id
-    @Column(name = "id")
-    private int id;
-    @Column(name = "name")
-    private String name;
-    @Column(name = "phone_number")
-    private String phoneNumber;
-    @Column(name = "address")
-    private String address;
+    private final User user;
+    private final GeoPoint startLocation;
+    private final GeoPoint endLocation;
+    String city;
 
-
-
+    public Client(User user, GeoPoint startLocation, GeoPoint endLocation,  String city) {
+        this.user = user;
+        this.startLocation = startLocation;
+        this.endLocation = endLocation;
+        this.city = city;
+    }
 }
